@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: white;
+    }
+    #result {
+      font-size: 24px;
+      color: green;
+      margin-bottom: 20px;
+      background-color: orange;
+      padding: 10px;
+      width: fit-content;
+      text-align: center;
+    }
+    input {
+      padding: 5px;
+      margin-right: 5px;
+      border: 1px solid black;
+      font-size: 16px;
+    }
+    button {
+      padding: 5px 10px;
+      border: 1px solid black;
+      background-color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div id="result">The result is: 0</div>
+  <div>
+    <input type="text" id="inputValue" value="John Doe">
+    <button onclick="multiplyValue()">Click me</button>
+  </div>
+
+  <script>
+    function multiplyValue() {
+      // Get the input value
+      const input = document.getElementById('inputValue').value;
+
+      // Check if it's a number
+      const numericValue = parseFloat(input);
+      if (isNaN(numericValue)) {
+        alert('Please enter a valid number.');
+        return;
+      }
+
+      // Multiply the value by 100
+      const result = numericValue * 100;
+
+      // Display the result
+      document.getElementById('result').innerText = `The result is: ${result}`;
+    }
+  </script>
+</body>
+</html>
